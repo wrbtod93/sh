@@ -838,8 +838,9 @@ def menu():
     print (' \x1b[1;93m[%s\x1b[1;97m06%s\x1b[1;93m] %sStart crack %s'%(K,P,H,P)) 
     print (' \x1b[1;93m[%s\x1b[1;97m07%s\x1b[1;93m] \x1b[1;97mSetting \x1b[1;93mU/A \x1b[1;93m[\x1b[1;96mUser agent\x1b[1;93m]'%(K,P)) 
     print (' \x1b[1;93m[%s\x1b[1;97m08%s\x1b[1;93m] \x1b[1;97mChek hasil crack \x1b[1;93m[\x1b[1;96mAccount Fb\x1b[1;93m]'%(K,P)) 
-    print (' \x1b[1;93m[%s\x1b[1;97m09%s\x1b[1;93m] \x1b[1;97mGabung group \x1b[1;93m[\x1b[1;96mFacebook\x1b[1;93m]'%(K,P))
-    print (' \x1b[1;93m[%s\x1b[1;97m10%s\x1b[1;93m] \x1b[1;97mInfo script \x1b[1;93m[\x1b[1;96mAuthor\x1b[1;93m]'%(K,P))
+    print (' \x1b[1;93m[%s\x1b[1;97m09%s\x1b[1;93m] \x1b[1;97mChek Opsi \x1b[1;93m[\x1b[1;96mHasil Crack\x1b[1;93m]'%(K,P)) 
+    print (' \x1b[1;93m[%s\x1b[1;97m10%s\x1b[1;93m] \x1b[1;97mGabung group \x1b[1;93m[\x1b[1;96mFacebook\x1b[1;93m]'%(K,P))
+    print (' \x1b[1;93m[%s\x1b[1;97m11%s\x1b[1;93m] \x1b[1;97mInfo script \x1b[1;93m[\x1b[1;96mAuthor\x1b[1;93m]'%(K,P))
     print (' \x1b[1;93m[%s\x1b[1;97m00%s\x1b[1;93m] \x1b[1;91mHapus token '%(M,P))
     unik = raw_input('\n%s [?] Menu : %s'%(P,K))
     if unik == '':
@@ -864,7 +865,7 @@ def menu():
         c = raw_input('\n%s [?] Menu : %s'%(P,K))
     	hasill(c)
     elif unik in['9','09']:
-        file_cp()
+        file_cp())
     elif unik in['10','100']:
         os.system("xdg-open https://www.facebook.com/groups/924679595149360")
     elif unik in['11','110']:
