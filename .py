@@ -643,7 +643,7 @@ def dumpfl():
     new = None
     if cek(1) == False:
         try:
-            cookie = raw_input("\n%s%s%s Supaya bekerja masukan cookie facebook anda\n%s# %sCookie%s > %s"%(U,til,O,P,O,M,K))
+            cookie = raw_input("\n%s%s%s \x1b[1;93mSupaya bekerja masukan cookie facebook anda\n%s# %s\x1b[1;93mCookie%s > %s"%(U,til,O,P,O,M,K))
             cvds = cvd(cookie)
             new = True
         except:
@@ -804,7 +804,7 @@ def info_tools():
     print ' %s\x1b[1;92m[%s\x1b[1;96m>%s\x1b[1;92m] \x1b[1;93m: Mrjeeck X nano'%(N,H,N);time.sleep(0.07)
     print ' %s\x1b[1;92m[%s\x1b[1;96m>%s\x1b[1;92m] \x1b[1;93m: aang Ardiansyah XD'%(N,H,N);time.sleep(0.07)
     print ' %s\x1b[1;92m[%s\x1b[1;96m>%s\x1b[1;92m] \x1b[1;93m: Yumee Tzy'%(N,H,N);time.sleep(0.07)
-    raw_input(' [ %s\x1b[1;93mKEMBALI%s ] '%(O,N));menu()
+    raw_input('\n [ %s\x1b[1;93mKEMBALI%s ] '%(O,N));menu()
 
 # CEK OPSI
 def file_cp():
