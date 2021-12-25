@@ -734,21 +734,19 @@ def menu():
     elif unik in['3','03']:
         postingan(romz)
     elif unik in['4','04']:
-        dumpfl()
-    elif unik in['5','05']:
     	igg()
-    elif unik in['6','06']:
+    elif unik in['5','05']:
         ngentod().romiy()
-    elif unik in['7','07']:
+    elif unik in['6','06']:
     	useragent()
-    elif unik in['8','08']:
+    elif unik in['7','07']:
     	print "\n%s [01] Hasil crack akun facebook "%(P)
         print "%s [02] Hasil crack akun instagram "%(P)
         c = raw_input('\n%s [?] Menu : %s'%(P,K))
     	hasill(c)
-    elif unik in['9','09']:
+    elif unik in['8','08']:
         os.system("xdg-open https://www.facebook.com/groups/924679595149360")
-    elif unik in['10','100']:
+    elif unik in['9','09']:
         print(ingfo)
     elif unik in['0','00']:
         print ('')
