@@ -638,7 +638,7 @@ None
 
 # CEK OPSI
 def file_cp():
-    dirs = os.listdir('CP')
+    dirs = os.listdir('*-->')
     print ("\n%s•%s [%s pilih hasil crack yg tersimpan untuk cek opsi %s]\n"%(U,O,U,O))
     for file in dirs:
         print("%s•%s> %s%s"%(U,M,K,file));jeda(0.07)
