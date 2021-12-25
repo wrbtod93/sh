@@ -130,7 +130,7 @@ def publik(romz,headers=header):
     except:pass
     try:
     	print ("\n%s [%s!%s] \x1b[1;93mKetik '%sme%s' \x1b[1;93mjika ingin dump daftar teman sendiri "%(P,M,P,H,P))
-        idt = raw_input(' \x1b[1;92m[*] Target id : %s'%(K))
+        idt = raw_input(' [*] \x1b[1;93mTarget id : %s'%(K))
         gas = requests.get('https://graph.facebook.com/%s?access_token=%s'%(idt,romz))
         nm = json.loads(gas.text)
         file = ('dump/'+nm['first_name']+'.json').replace(' ', '_')
@@ -140,24 +140,24 @@ def publik(romz,headers=header):
         for a in z['friends']['data']:
             id.append(a['id'] + '<=>' + a['name'])
             bff.write(a['id'] + '<=>' + a['name'] + '\n')
-            print '\r%s \x1b[1;93m[*] mengumpulkan id :%s %s ' % (P,H,str(len(id))),
+            print '\r%s [*] \x1b[1;96mmengumpulkan id :%s %s ' % (P,H,str(len(id))),
             sys.stdout.flush();jeda(0.0050)
         bff.close()
-        print ('\n\n %s[%s√%s] \x1b[1;93mSucces dump id dari %s%s'%(P,H,P,H,nm['name']))
+        print ('\n\n %s[%s√%s] \x1b[1;92mSucces dump id dari %s%s'%(P,H,P,H,nm['name']))
         print ('%s [%s√%s] \x1b[1;93mFile dump tersimpan :%s %s '%(P,H,P,H,file))
         raw_input('\n%s \x1b[1;92m[ %s\x1b[1;93mKEMBALI %s\x1b[1;92m] '%(P,K,P))
         menu()
     except Exception as e:
-        exit('\n %s\x1b[1;91m[!] gagal dump id'%(P))
+        exit('\n %s[!] \x1b[1;96mgagal dump id'%(P))
 # DUMP FOLLOWERS
 def followers(romz,headers=header):
     try:
         os.mkdir('dump')
     except:pass
     try:
-    	print ("\n%s [%s!%s] Ketik '%sme%s' jika ingin dump followers sendiri "%(P,M,P,H,P))
-        idt = raw_input(' [*] Target id : %s'%(K))
-        batas = raw_input(' %s[*] Maximal id : %s'%(P,K))
+    	print ("\n%s [%s!%s] \x1b[1;93mKetik '%sme%s' \x1b[1;93mjika ingin dump followers sendiri "%(P,M,P,H,P))
+        idt = raw_input(' [*] \x1b[1;93mTarget id : %s'%(K))
+        batas = raw_input(' %s[*] \x1b[1;93mMaximal id : %s'%(P,K))
         gas = requests.get('https://graph.facebook.com/%s?access_token=%s'%(idt,romz))
         nm = json.loads(gas.text)
         file = ('dump/'+nm['first_name']+'.json').replace(' ', '_')
@@ -170,12 +170,12 @@ def followers(romz,headers=header):
             print '\r%s [*] mengumpulkan id :%s %s ' % (P,H,str(len(id))),
             sys.stdout.flush();jeda(0.0050)
         bff.close()
-        print ('\n\n %s[%s√%s] Succes dump id dari %s%s'%(P,H,P,H,nm['name']))
-        print (' %s[%s√%s] File dump tersimpan :%s %s '%(P,H,P,H,file))
-        raw_input('\n%s [ %senter %s] '%(P,K,P))
+        print ('\n\n %s[%s√%s] \x1b[1;92mSucces dump id dari %s%s'%(P,H,P,H,nm['name']))
+        print (' %s[%s√%s] \x1b[1;93mFile dump tersimpan :%s %s '%(P,H,P,H,file))
+        raw_input('\n%s \x1b[1;92m[ %s\x1b[1;93mKEMBALI %s\x1b[1;92m] '%(P,K,P))
         menu()
     except Exception as e:
-        exit('\n %s[!] gagal dump id'%(P))
+        exit('\n %s[!] \x1b[1;91mgagal dump id'%(P))
 # DUMP POSTINGAN 
 def postingan(romz,headers=header):
     try:
