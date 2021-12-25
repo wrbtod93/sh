@@ -60,7 +60,7 @@ def folder():
 		pass
 # LOGO (LO GOBLOK)
 IP = requests.get("https://api.ipify.org/").text
-def benner():
+def logo():
 	os.system("clear")
 	print("""%s
  \x1b[1;92m _________             \x1b[1;93m_____    _______   \x1b[1;92m__________
@@ -73,7 +73,7 @@ def benner():
 # MASUK TOKEN (TOKEN LISTRIK)
 header = {"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)), "x-fb-sim-hni": str(random.randint(20000, 40000)), "x-fb-net-hni": str(random.randint(20000, 40000)), "x-fb-connection-quality": "EXCELLENT", "x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA", "user-agent": "NokiaC3-00/5.0 (07.20) Profile/MIDP-2.1 Configuration/CLDC-1.1 Mozilla/5.0 AppleWebKit/420+ (KHTML, like Gecko) Safari/420+ ;]", "content-type": "application/x-www-form-urlencoded", "x-fb-http-engine": "Liger"}
 def masuk():
-    os.system('clear');banner()
+    os.system('clear');logo()
     print ('\n%s [01] Login via token \n [02] Cara mendapatkan token \n [%s00%s] Keluar'%(P,M,P))
     rom = raw_input('\n%s [?] Menu : %s'%(P,K))
     if rom in(""):
@@ -622,7 +622,7 @@ def menu():
         print("%s [!] Token invalid "%(M));jeda(2);os.system('rm -rf data/token.txt && rm -rf data/cookies');masuk()
     except requests.exceptions.ConnectionError:
         exit("%s [!] Kesalahan koneksi "%(M))
-    banner()
+    logo()
     print ('\n %s[ welcome %s%s%s ] \n'%(P,K,nama,P))
     print (' [%s01%s] Dump id public'%(K,P)) 
     print (' [%s02%s] Dump id followers'%(K,P)) 
