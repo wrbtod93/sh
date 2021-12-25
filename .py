@@ -595,7 +595,6 @@ def dumpfl():
             print("\x1b[1;91m• invalid cookie");dumpfl()
     else:
 
-    r = requests.get('https://mbasic.facebook.com/profile.php', ).text
     if len(bs4.re.findall('logout', r)) != 0:
         if kueh(cvds) != True:
             exit("%s%s gagal saat mendeteksi bahasa."%(M,til))
