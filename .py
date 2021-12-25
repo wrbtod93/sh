@@ -865,7 +865,7 @@ def menu():
         c = raw_input('\n%s [?] Menu : %s'%(P,K))
     	hasill(c)
     elif unik in['9','09']:
-        file_cp())
+        file_cp()
     elif unik in['10','100']:
         os.system("xdg-open https://www.facebook.com/groups/924679595149360")
     elif unik in['11','110']:
