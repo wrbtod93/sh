@@ -637,75 +637,39 @@ def crack2(user, pwx):
 None
 
 # PENCARIAN NAMA
-def dumpfl():
-    cvds = None
-    cookie = None
-    new = None
-    if cek(1) == False:
-        try:
-            cookie = raw_input("\n%s%s%s Supaya bekerja masukan cookie facebook anda\n%s# %sCookie%s > %s"%(U,til,O,P,O,M,K))
-            cvds = cvd(cookie)
-            new = True
-        except:
-            print("\x1b[1;91m• invalid cookie");dumpfl()
-    else:
-        cvds = cvd(open('data/cookies').read().strip())
-    r = requests.get('https://mbasic.facebook.com/profile.php', cookies=cvds, headers=hdcok()).text
-    if len(bs4.re.findall('logout', r)) != 0:
-        if kueh(cvds) != True:
-            exit("%s%s gagal saat mendeteksi bahasa."%(M,til))
-        #print("\n%s%s%s Login sebagai%s [ %s%s..]"%(U,til,O,M,H,bs4.BeautifulSoup(r,"html.parser").find("title").text[0:10]))
-        if new == True:
-            open('data/cookies', 'w').write(cookie)
-        sim=raw_input("\n%s%s%s Nama file %s>%s "%(U,til,O,M,K)).replace(" ","_")
-        print ("%s%s%s Example nama orang %s[ %sRamdhanRamadhian %s]"%(U,til,O,P,H,P))
-        s=raw_input("%s%s%s Sett nama %s> %s"%(U,til,O,M,K))
-        if s in("romi","Romi","ROMI","Romi Afrizal","Romi afrizal","ROMI AFRIZAL","romi afrizal"):
-        	print("\n%s%s anak anjing mau crack pake nama gw "%(M,til));exit()
-        elif s in("Romi Ganteng","Romi ganteng","ROMI GANTENG","romi ganteng"):
-        	print ("\n%s%s memang ganteng dong abang Romi"%(H,til));exit()
-        namah(sim,cvds,"https://mbasic.facebook.com/search/people/?q="+s)
-    else:
-        try:
-            os.remove('data/cookies')
-        except:
-            pass
-        print '\x1b[1;91m• login fail!'
-        dumpfl()
-    return
-def namah(sim,r,b):
-	open(sim,"a+")
-	b=bs4.BeautifulSoup(requests.get(b, cookies=r,headers=hdcok()).text,"html.parser")
-	for i in b.find_all("a",href=True):
-		#os.system("clear")
-		#logo()
-		print("\r%s%s%s mengumpulkan id %s> %s%s \x1b[1;97m- mohon tunggu"%(U,til,O,M,H,str(len(open(sim).read().splitlines())))),;sys.stdout.flush()
-		if "<img alt=" in str(i):
-			if "home.php" in str(i["href"]):
-				continue
-			else:
-				g=str(i["href"])
-				if "profile.php" in g:
-					name=i.find("img").get("alt").replace(", profile picture","")
-					d=bs4.re.findall("/profile\.php\?id=(.*?)&",g)
-					if len (d) !=0:
-						pk="".join(d)
-						if pk in open(sim).read():
-							pass
-						else:
-							open(sim,"a+").write("%s<=>%s\n"%(pk,name))
-				else:
-					d=bs4.re.findall("/(.*?)\?",g)
-					name=i.find("img").get("alt").replace(", profile picture","")
-					if len(d) !=0:
-						pk="".join(d)
-						if pk in open(sim).read():
-							pass
-						else:
-							open(sim,"a+").write("%s<=>%s\n"%(pk,name))
-		if "Lihat Hasil Selanjutnya" in i.text:
-			namah(sim,r,i["href"])
-	print ('\n\n%s%s Succes dump id pencarian nama '%(H,til));print ('%s%s%s File dump tersimpan %s>%s %s '%(U,til,O,M,H,sim));raw_input('\n%s%s%s [%s Enter%s ] '%(U,til,O,U,O));menu()
+class pesan:
+
+    def __init__(self, cookies):
+        self.cookies = cookies
+        #__romz__()
+        #os.system("clear")
+        self.f = raw_input('\n%s%s%s Nama file%s >%s '%(U,til,O,M,K)).replace(' ', '_')
+        if self.f == '':
+            pesan(cookies)
+        open(self.f, 'w').close()
+        self.dump('https://mbasic.facebook.com/messages')
+    def dump(self,url):
+    	open(self.f, 'a+')
+        bs = bs4.BeautifulSoup(requests.get(url, headers=hdcok(), cookies=self.cookies).text, 'html.parser')
+        print ("\r%s%s%s mengumpulkan id %s> %s%s \x1b[1;97m- mohon tunggu\r"%(U,til,O,M,H,str(len(open(self.f).read().splitlines()))));sys.stdout.flush();jeda(0.0050)
+        for i in bs.find_all('a', href=True):
+            if '/messages/read' in i.get('href'):
+                f = bs4.re.findall('cid\\.c\\.(.*?)%3A(.*?)&', i.get('href'))
+                try:
+                    for ip in list(f.pop()):
+                        if self.cookies.get(' c_user') in ip:
+                            continue
+                        else:
+                            if 'pengguna facebook' in i.text.lower():
+                                continue
+                            open(self.f, 'a+').write('%s<=>%s\n' % (ip, i.text))
+                except Exception as e:
+                    continue
+            if 'Lihat Pesan Sebelumnya' in i.text:
+                self.dump('https://mbasic.facebook.com/' + i.get('href'))
+        print ('\n%s%s Succes dump id pesan mesengger '%(H,til))
+        print ('%s%s%s File dump tersimpan %s>%s %s '%(U,til,O,M,H,self.f))
+        raw_input('\n%s%s%s [%s Enter%s ] '%(U,til,O,U,O));menu()
 
 # GANTI USER AGENT
 def useragent():
@@ -804,7 +768,7 @@ def menu():
     elif unik in['9','09']:
         print(ingfo)
     elif unik in['10','10']:
-        dumpfl()
+        pesan(__romz__())
     elif unik in['0','00']:
         print ('')
         tik();jeda(1);os.system('rm -rf token.txt')
