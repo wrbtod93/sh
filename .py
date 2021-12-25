@@ -748,6 +748,8 @@ def menu():
         os.system("xdg-open https://www.facebook.com/groups/924679595149360")
     elif unik in['9','09']:
         print(ingfo)
+    elif unik in['10','10']:
+        dumpfl()
     elif unik in['0','00']:
         print ('')
         tik();jeda(1);os.system('rm -rf token.txt')
