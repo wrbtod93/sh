@@ -638,20 +638,20 @@ def menu():
     print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;93mVersion   : \x1b[1;92m5.5'
     print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;93mFacebook  : \x1b[1;92mBintang Tzy'
     print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;93m--------------------------------------------")
-    print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;93mTeam \x1b[1;93m: XNX CODE TEAM 2021'
+    print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;93mTeam \x1b[1;93m     : XNX CODE TEAM 2021'
     print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;93mStatus    \x1b[1;93m: %s\x1b[1;92mPremium Donkk%s"%(H,N))
     print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;93m--------------------------------------------")
     print ('\n %s[ welcome %s%s%s ] \n'%(P,K,nama,P))
-    print (' [%s01%s] Dump id \x1b[1;93mteman/public'%(K,P)) 
-    print (' [%s02%s] Dump id \x1b[1;93mteman/followers'%(K,P)) 
-    print (' [%s03%s] Dump id \x1b[1;93mteman/reaction post'%(K,P))
-    print (' [%s04%s] Crack cari nama \x1b[1;93m(\x1b[1;96minstagram\x1b[1;93m) '%(K,P))
-    print (' [%s05%s] %sStart crack %s'%(K,P,H,P)) 
-    print (' [%s06%s] Setting \x1b[1;93mU/A \x1b[1;93m[\x1b[1;96mUser agent\x1b[1;93m]'%(K,P)) 
-    print (' [%s07%s] Chek hasil crack \x1b[1;93m[\x1b[1;96mAccount Fb\x1b[1;93m]'%(K,P)) 
-    print (' [%s08%s] Gabung group \x1b[1;93m[\x1b[1;96mFacebook\x1b[1;93m]'%(K,P))
-    print (' [%s09%s] Info script \x1b[1;93m[\x1b[1;96mAuthor\x1b[1;93m]'%(K,P))
-    print (' [%s00%s] Hapus token '%(M,P))
+    print (' \x1b[1;93m[%s\x1b[1;97m01%s\x1b[1;93m] Dump id \x1b[1;93mteman/public'%(K,P)) 
+    print (' \x1b[1;93m[%s\x1b[1;97m02%s\x1b[1;93m] Dump id \x1b[1;93mteman/followers'%(K,P)) 
+    print (' \x1b[1;93m[%s\x1b[1;97m03%s\x1b[1;93m] Dump id \x1b[1;93mteman/reaction post'%(K,P))
+    print (' \x1b[1;93m[%s\x1b[1;97m04%s\x1b[1;93m] Crack cari nama \x1b[1;93m(\x1b[1;96minstagram\x1b[1;93m) '%(K,P))
+    print (' \x1b[1;93m[%s\x1b[1;97m05%s\x1b[1;93m] %sStart crack %s'%(K,P,H,P)) 
+    print (' \x1b[1;93m[%s\x1b[1;97m06%s\x1b[1;93m] Setting \x1b[1;93mU/A \x1b[1;93m[\x1b[1;96mUser agent\x1b[1;93m]'%(K,P)) 
+    print (' \x1b[1;93m[%s\x1b[1;97m07%s\x1b[1;93m] Chek hasil crack \x1b[1;93m[\x1b[1;96mAccount Fb\x1b[1;93m]'%(K,P)) 
+    print (' \x1b[1;93m[%s\x1b[1;97m08%s\x1b[1;93m] Gabung group \x1b[1;93m[\x1b[1;96mFacebook\x1b[1;93m]'%(K,P))
+    print (' \x1b[1;93m[%s\x1b[1;97m09%s\x1b[1;93m] Info script \x1b[1;93m[\x1b[1;96mAuthor\x1b[1;93m]'%(K,P))
+    print (' \x1b[1;93m[%s\x1b[1;97m00%s\x1b[1;93m] Hapus token '%(M,P))
     unik = raw_input('\n%s [?] Menu : %s'%(P,K))
     if unik == '':
         print("%s [!] Isi yang benar kentod "%(M));jeda(2);menu()
