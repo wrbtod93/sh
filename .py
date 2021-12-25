@@ -594,7 +594,7 @@ def dumpfl():
         except:
             print("\x1b[1;91m• invalid cookie");dumpfl()
     else:
-        cvds = cvds(open('data/cookies').read().strip())
+        cvds = (open('data/cookies').read().strip())
     r = requests.get('https://mbasic.facebook.com/profile.php', cookies=cvds, headers=hdcok()).text
     if len(bs4.re.findall('logout', r)) != 0:
         if kueh(cvds) != True:
