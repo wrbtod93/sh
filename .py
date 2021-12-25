@@ -736,12 +736,13 @@ def menu():
     print (' \x1b[1;93m[%s\x1b[1;97m01%s\x1b[1;93m] \x1b[1;97mDump id \x1b[1;93mteman/public'%(K,P)) 
     print (' \x1b[1;93m[%s\x1b[1;97m02%s\x1b[1;93m] \x1b[1;97mDump id \x1b[1;93mteman/followers'%(K,P)) 
     print (' \x1b[1;93m[%s\x1b[1;97m03%s\x1b[1;93m] \x1b[1;97mDump id \x1b[1;93mteman/reaction post'%(K,P))
-    print (' \x1b[1;93m[%s\x1b[1;97m04%s\x1b[1;93m] \x1b[1;97mCrack cari nama \x1b[1;93m(\x1b[1;96minstagram\x1b[1;93m) '%(K,P))
-    print (' \x1b[1;93m[%s\x1b[1;97m05%s\x1b[1;93m] %sStart crack %s'%(K,P,H,P)) 
-    print (' \x1b[1;93m[%s\x1b[1;97m06%s\x1b[1;93m] \x1b[1;97mSetting \x1b[1;93mU/A \x1b[1;93m[\x1b[1;96mUser agent\x1b[1;93m]'%(K,P)) 
-    print (' \x1b[1;93m[%s\x1b[1;97m07%s\x1b[1;93m] \x1b[1;97mChek hasil crack \x1b[1;93m[\x1b[1;96mAccount Fb\x1b[1;93m]'%(K,P)) 
-    print (' \x1b[1;93m[%s\x1b[1;97m08%s\x1b[1;93m] \x1b[1;97mGabung group \x1b[1;93m[\x1b[1;96mFacebook\x1b[1;93m]'%(K,P))
-    print (' \x1b[1;93m[%s\x1b[1;97m09%s\x1b[1;93m] \x1b[1;97mInfo script \x1b[1;93m[\x1b[1;96mAuthor\x1b[1;93m]'%(K,P))
+    print (' \x1b[1;93m[%s\x1b[1;97m04%s\x1b[1;93m] \x1b[1;97mDump id \x1b[1;93mPesan Mesenggers'%(K,P))
+    print (' \x1b[1;93m[%s\x1b[1;97m05%s\x1b[1;93m] \x1b[1;97mCrack cari nama \x1b[1;93m(\x1b[1;96minstagram\x1b[1;93m) '%(K,P))
+    print (' \x1b[1;93m[%s\x1b[1;97m06%s\x1b[1;93m] %sStart crack %s'%(K,P,H,P)) 
+    print (' \x1b[1;93m[%s\x1b[1;97m07%s\x1b[1;93m] \x1b[1;97mSetting \x1b[1;93mU/A \x1b[1;93m[\x1b[1;96mUser agent\x1b[1;93m]'%(K,P)) 
+    print (' \x1b[1;93m[%s\x1b[1;97m08%s\x1b[1;93m] \x1b[1;97mChek hasil crack \x1b[1;93m[\x1b[1;96mAccount Fb\x1b[1;93m]'%(K,P)) 
+    print (' \x1b[1;93m[%s\x1b[1;97m09%s\x1b[1;93m] \x1b[1;97mGabung group \x1b[1;93m[\x1b[1;96mFacebook\x1b[1;93m]'%(K,P))
+    print (' \x1b[1;93m[%s\x1b[1;97m10%s\x1b[1;93m] \x1b[1;97mInfo script \x1b[1;93m[\x1b[1;96mAuthor\x1b[1;93m]'%(K,P))
     print (' \x1b[1;93m[%s\x1b[1;97m00%s\x1b[1;93m] \x1b[1;91mHapus token '%(M,P))
     unik = raw_input('\n%s [?] Menu : %s'%(P,K))
     if unik == '':
@@ -753,22 +754,22 @@ def menu():
     elif unik in['3','03']:
         postingan(romz)
     elif unik in['4','04']:
-    	igg()
+        pesan(__romz__())
     elif unik in['5','05']:
-        ngentod().romiy()
+    	igg()
     elif unik in['6','06']:
-    	useragent()
+        ngentod().romiy()
     elif unik in['7','07']:
+    	useragent()
+    elif unik in['8','08']:
     	print "\n%s [01] Hasil crack akun facebook "%(P)
         print "%s [02] Hasil crack akun instagram "%(P)
         c = raw_input('\n%s [?] Menu : %s'%(P,K))
     	hasill(c)
-    elif unik in['8','08']:
-        os.system("xdg-open https://www.facebook.com/groups/924679595149360")
     elif unik in['9','09']:
+        os.system("xdg-open https://www.facebook.com/groups/924679595149360")
+    elif unik in['10','100']:
         print(ingfo)
-    elif unik in['10','10']:
-        pesan(__romz__())
     elif unik in['0','00']:
         print ('')
         tik();jeda(1);os.system('rm -rf token.txt')
