@@ -636,6 +636,71 @@ def crack2(user, pwx):
 	loping+=1
 None
 
+# DUMP GROUP
+class group:
+	
+	def __init__(self, cookies):
+		self.glist=[]
+		self.cookies=cookies
+		self.manual();exit()
+	def manual(self):
+		print("\n%s%s%s Perlu di ingat group harus bersifat publik atau wajib join group"%(U,til,O))
+		id=raw_input("%s%s%s Id groups%s > %s"%(U,til,O,M,K))
+		if id in(""):
+			self.manual()
+		else:
+			_r_=bs4.BeautifulSoup(requests.get("https://mbasic.facebook.com/groups/"+id,headers=hdcok(),cookies=self.cookies).text,"html.parser")
+			if "konten tidak" in _r_.find("title").text.lower():
+				exit("%s%s input id grup yg valid goblok, id error, atau lu belom jooin di grup"%(M,til))
+			else:
+				self.listed={"id":id,"name":_r_.find("title").text}
+				self.fuck_you()
+				print("%s%s%s Nama grup%s > %s%s.."%(U,til,O,M,H,self.listed.get("name")[0:20]))
+				self.dumps("https://mbasic.facebook.com/groups/"+id)
+	def fuck_you(self):
+		self.fl=raw_input('%s%s%s Nama file %s> %s'%(U,til,O,M,K)).replace(" ","_")
+		if self.fl=='':self.fuck_you()
+		open(self.fl,"w").close()
+	def dumps(self, url):
+		_r_=bs4.BeautifulSoup(requests.get(url,cookies=self.cookies,headers=hdcok()).text,"html.parser")
+		print("\r%s%s%s mengumpulkan id %s> %s%s \x1b[1;97m- mohon tunggu\r"%(U,til,O,M,H,str(len(open(self.fl).read().splitlines()))))
+		sys.stdout.flush();jeda(0.0050)
+		for _i_ in _r_.find_all("h3"):
+			try:
+				if len(bs4.re.findall("\/",_i_.find("a",href=True).get("href")))==1:
+					ogeh=_i_.find("a",href=True)
+					if "profile.php" in ogeh.get("href"):
+						_a_="".join(bs4.re.findall("profile\.php\?id=(.*?)&",ogeh.get("href")))
+						if len(_a_)==0:continue
+						elif _a_ in open(self.fl).read():
+							continue
+						else:
+							open(self.fl,"a+").write("%s<=>%s\n"%(_a_,ogeh.text))
+							continue
+					else:
+						_a_="".join(bs4.re.findall("/(.*?)\?",ogeh.get("href")))
+						if len(_a_)==0:continue
+						elif _a_ in open(self.fl).read():
+							continue
+						else:
+							open(self.fl,"a+").write("%s<=>%s\n"%(_a_,ogeh.text))
+			except:continue
+		for _i_ in _r_.find_all("a",href=True):
+			if "Lihat Postingan Lainnya" in _i_.text:
+				while True:
+					try:
+						self.dumps("https://mbasic.facebook.com/"+_i_.get("href"))
+						break
+					except Exception as e:
+						print("\r\x1b[1;91m•%s, retrying..."%e);continue
+		print ('\n\n%s%s Succes dump id member group '%(H,til));print ('%s%s%s File dump tersimpan %s>%s %s '%(U,til,O,M,H,self.fl));raw_input('\n%s%s%s [%s Enter%s ] '%(U,til,O,U,O));menu()
+def cek(arg):
+	if os.path.exists("data/cookies"):
+		if os.path.getsize("data/cookies") !=0:
+			return True
+		else:return False
+	else:return False
+
 # CEK OPSI
 def file_cp():
     dirs = os.listdir('CP')
@@ -834,13 +899,14 @@ def menu():
     print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m02%s\x1b[1;93m] \x1b[1;97mDump id \x1b[1;93mteman/followers'%(K,P)) 
     print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m03%s\x1b[1;93m] \x1b[1;97mDump id \x1b[1;93mteman/reaction post'%(K,P))
     print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m04%s\x1b[1;93m] \x1b[1;97mDump id \x1b[1;93mPesan Mesenggers'%(K,P))
-    print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m05%s\x1b[1;93m] \x1b[1;97mCrack cari nama \x1b[1;93m(\x1b[1;96minstagram\x1b[1;93m) '%(K,P))
-    print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m06%s\x1b[1;93m] %sStart crack %s'%(K,P,H,P)) 
-    print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m07%s\x1b[1;93m] \x1b[1;97mSetting \x1b[1;93mU/A \x1b[1;93m[\x1b[1;96mUser agent\x1b[1;93m]'%(K,P)) 
-    print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m08%s\x1b[1;93m] \x1b[1;97mChek hasil crack \x1b[1;93m[\x1b[1;96mAccount Fb\x1b[1;93m]'%(K,P)) 
-    print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m09%s\x1b[1;93m] \x1b[1;97mChek Opsi \x1b[1;93m[\x1b[1;96mHasil Crack\x1b[1;93m]'%(K,P)) 
-    print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m10%s\x1b[1;93m] \x1b[1;97mGabung group \x1b[1;93m[\x1b[1;96mFacebook\x1b[1;93m]'%(K,P))
-    print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m11%s\x1b[1;93m] \x1b[1;97mInfo script \x1b[1;93m[\x1b[1;96mAuthor\x1b[1;93m]'%(K,P))
+    print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m05%s\x1b[1;93m] \x1b[1;97mDump id \x1b[1;93m[\x1b[1;96mAnggota grup\x1b[1;93m]'%(K,P))
+    print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m06%s\x1b[1;93m] \x1b[1;97mCrack cari nama \x1b[1;93m(\x1b[1;96minstagram\x1b[1;93m) '%(K,P))
+    print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m07%s\x1b[1;93m] %sStart crack %s'%(K,P,H,P)) 
+    print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m08%s\x1b[1;93m] \x1b[1;97mSetting \x1b[1;93mU/A \x1b[1;93m[\x1b[1;96mUser agent\x1b[1;93m]'%(K,P)) 
+    print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m09%s\x1b[1;93m] \x1b[1;97mChek hasil crack \x1b[1;93m[\x1b[1;96mAccount Fb\x1b[1;93m]'%(K,P)) 
+    print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m010%s\x1b[1;93m] \x1b[1;97mChek Opsi \x1b[1;93m[\x1b[1;96mHasil Crack\x1b[1;93m]'%(K,P)) 
+    print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m11%s\x1b[1;93m] \x1b[1;97mGabung group \x1b[1;93m[\x1b[1;96mFacebook\x1b[1;93m]'%(K,P))
+    print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m12%s\x1b[1;93m] \x1b[1;97mInfo script \x1b[1;93m[\x1b[1;96mAuthor\x1b[1;93m]'%(K,P))
     print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m00%s\x1b[1;93m] \x1b[1;91mHapus token '%(M,P))
     unik = raw_input('\n%s [?] Menu : %s'%(P,K))
     if unik == '':
@@ -854,21 +920,23 @@ def menu():
     elif unik in['4','04']:
         pesan(__romz__())
     elif unik in['5','05']:
-    	igg()
+        group(__romz__())
     elif unik in['6','06']:
-        ngentod().romiy()
+    	igg()
     elif unik in['7','07']:
-    	useragent()
+        ngentod().romiy()
     elif unik in['8','08']:
+    	useragent()
+    elif unik in['9','09']:
     	print "\n%s [01] Hasil crack akun facebook "%(P)
         print "%s [02] Hasil crack akun instagram "%(P)
         c = raw_input('\n%s [?] Menu : %s'%(P,K))
     	hasill(c)
-    elif unik in['9','09']:
-        file_cp()
     elif unik in['10','100']:
-        os.system("xdg-open https://www.facebook.com/groups/924679595149360")
+        file_cp()
     elif unik in['11','110']:
+        os.system("xdg-open https://www.facebook.com/groups/924679595149360")
+    elif unik in['12','120']:
         print(ingfo)
     elif unik in['0','00']:
         print ('')
