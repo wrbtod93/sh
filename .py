@@ -678,7 +678,7 @@ def namah(sim,r,b):
 	b=bs4.BeautifulSoup(requests.get(b, cookies=r,headers=hdcok()).text,"html.parser")
 	for i in b.find_all("a",href=True):
 		#os.system("clear")
-		#banner()
+		#logo()
 		print("\r%s%s%s mengumpulkan id %s> %s%s \x1b[1;97m- mohon tunggu"%(U,til,O,M,H,str(len(open(sim).read().splitlines())))),;sys.stdout.flush()
 		if "<img alt=" in str(i):
 			if "home.php" in str(i["href"]):
@@ -869,41 +869,6 @@ def aplikasi(berhasil,kuki):
 		except:
 			pass
 
-# PENCARIAN NAMA
-class pesan:
-
-    def __init__(self, cookies):
-        self.cookies = cookies
-        #__romz__()
-        #os.system("clear")
-        self.f = raw_input('\n%s%s%s Nama file%s >%s '%(U,til,O,M,K)).replace(' ', '_')
-        if self.f == '':
-            pesan(cookies)
-        open(self.f, 'w').close()
-        self.dump('https://mbasic.facebook.com/messages')
-    def dump(self,url):
-    	open(self.f, 'a+')
-        bs = bs4.BeautifulSoup(requests.get(url, headers=hdcok(), cookies=self.cookies).text, 'html.parser')
-        print ("\r%s%s%s mengumpulkan id %s> %s%s \x1b[1;97m- mohon tunggu\r"%(U,til,O,M,H,str(len(open(self.f).read().splitlines()))));sys.stdout.flush();jeda(0.0050)
-        for i in bs.find_all('a', href=True):
-            if '/messages/read' in i.get('href'):
-                f = bs4.re.findall('cid\\.c\\.(.*?)%3A(.*?)&', i.get('href'))
-                try:
-                    for ip in list(f.pop()):
-                        if self.cookies.get(' c_user') in ip:
-                            continue
-                        else:
-                            if 'pengguna facebook' in i.text.lower():
-                                continue
-                            open(self.f, 'a+').write('%s<=>%s\n' % (ip, i.text))
-                except Exception as e:
-                    continue
-            if 'Lihat Pesan Sebelumnya' in i.text:
-                self.dump('https://mbasic.facebook.com/' + i.get('href'))
-        print ('\n%s%s Succes dump id pesan mesengger '%(H,til))
-        print ('%s%s%s File dump tersimpan %s>%s %s '%(U,til,O,M,H,self.f))
-        raw_input('\n%s%s%s [%s Enter%s ] '%(U,til,O,U,O));menu()
-
 # GANTI USER AGENT
 def useragent():
 	print ("\n%s [%s01%s] \x1b[1;96mGanti user agent "%(P,K,P))
@@ -969,7 +934,7 @@ def menu():
     print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m01%s\x1b[1;93m] \x1b[1;97mDump id \x1b[1;93mteman/public'%(K,P)) 
     print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m02%s\x1b[1;93m] \x1b[1;97mDump id \x1b[1;93mteman/followers'%(K,P)) 
     print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m03%s\x1b[1;93m] \x1b[1;97mDump id \x1b[1;93mteman/reaction post'%(K,P))
-    print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m04%s\x1b[1;93m] \x1b[1;97mDump id \x1b[1;93mPesan Mesenggers'%(K,P))
+    print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m04%s\x1b[1;93m] \x1b[1;97mDump id \x1b[1;93mpencarian nama'%(K,P))
     print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m05%s\x1b[1;93m] \x1b[1;97mDump id \x1b[1;93mAnggota grup'%(K,P))
     print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m06%s\x1b[1;93m] \x1b[1;97mCrack cari nama \x1b[1;93m(\x1b[1;96minstagram\x1b[1;93m) '%(K,P))
     print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m07%s\x1b[1;93m] %sStart crack %s'%(K,P,H,P)) 
