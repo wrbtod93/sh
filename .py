@@ -586,7 +586,7 @@ def dumpfl():
     cvds = None
     cookie = None
     new = None
-    if cek(1) == False:
+    if (1) == False:
         try:
             cookie = raw_input("\n%s%s%s Supaya bekerja masukan cookie facebook anda\n%s# %sCookie%s > %s"%(U,til,O,P,O,M,K))
             cvds = cvd(cookie)
