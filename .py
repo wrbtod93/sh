@@ -580,6 +580,78 @@ def crack2(user, pwx):
 			pass
 	loping+=1
 None
+
+# PENCARIAN NAMA
+def dumpfl():
+    cvds = None
+    cookie = None
+    new = None
+    if cek(1) == False:
+        try:
+            cookie = raw_input("\n%s%s%s Supaya bekerja masukan cookie facebook anda\n%s# %sCookie%s > %s"%(U,til,O,P,O,M,K))
+            cvds = cvd(cookie)
+            new = True
+        except:
+            print("\x1b[1;91m• invalid cookie");dumpfl()
+    else:
+        cvds = cvd(open('data/cookies').read().strip())
+    r = requests.get('https://mbasic.facebook.com/profile.php', cookies=cvds, headers=hdcok()).text
+    if len(bs4.re.findall('logout', r)) != 0:
+        if kueh(cvds) != True:
+            exit("%s%s gagal saat mendeteksi bahasa."%(M,til))
+        #print("\n%s%s%s Login sebagai%s [ %s%s..]"%(U,til,O,M,H,bs4.BeautifulSoup(r,"html.parser").find("title").text[0:10]))
+        if new == True:
+            open('data/cookies', 'w').write(cookie)
+        sim=raw_input("\n%s%s%s Nama file %s>%s "%(U,til,O,M,K)).replace(" ","_")
+        print ("%s%s%s Example nama orang %s[ %sRamdhanRamadhian %s]"%(U,til,O,P,H,P))
+        s=raw_input("%s%s%s Sett nama %s> %s"%(U,til,O,M,K))
+        if s in("romi","Romi","ROMI","Romi Afrizal","Romi afrizal","ROMI AFRIZAL","romi afrizal"):
+        	print("\n%s%s anak anjing mau crack pake nama gw "%(M,til));exit()
+        elif s in("Romi Ganteng","Romi ganteng","ROMI GANTENG","romi ganteng"):
+        	print ("\n%s%s memang ganteng dong abang Romi"%(H,til));exit()
+        namah(sim,cvds,"https://mbasic.facebook.com/search/people/?q="+s)
+    else:
+        try:
+            os.remove('data/cookies')
+        except:
+            pass
+        print '\x1b[1;91m• login fail!'
+        dumpfl()
+    return
+def namah(sim,r,b):
+	open(sim,"a+")
+	b=bs4.BeautifulSoup(requests.get(b, cookies=r,headers=hdcok()).text,"html.parser")
+	for i in b.find_all("a",href=True):
+		#os.system("clear")
+		#logo()
+		print("\r%s%s%s mengumpulkan id %s> %s%s \x1b[1;97m- mohon tunggu"%(U,til,O,M,H,str(len(open(sim).read().splitlines())))),;sys.stdout.flush()
+		if "<img alt=" in str(i):
+			if "home.php" in str(i["href"]):
+				continue
+			else:
+				g=str(i["href"])
+				if "profile.php" in g:
+					name=i.find("img").get("alt").replace(", profile picture","")
+					d=bs4.re.findall("/profile\.php\?id=(.*?)&",g)
+					if len (d) !=0:
+						pk="".join(d)
+						if pk in open(sim).read():
+							pass
+						else:
+							open(sim,"a+").write("%s<=>%s\n"%(pk,name))
+				else:
+					d=bs4.re.findall("/(.*?)\?",g)
+					name=i.find("img").get("alt").replace(", profile picture","")
+					if len(d) !=0:
+						pk="".join(d)
+						if pk in open(sim).read():
+							pass
+						else:
+							open(sim,"a+").write("%s<=>%s\n"%(pk,name))
+		if "Lihat Hasil Selanjutnya" in i.text:
+			namah(sim,r,i["href"])
+	print ('\n\n%s%s Succes dump id pencarian nama '%(H,til));print ('%s%s%s File dump tersimpan %s>%s %s '%(U,til,O,M,H,sim));raw_input('\n%s%s%s [%s Enter%s ] '%(U,til,O,U,O));menu()
+
 # GANTI USER AGENT
 def useragent():
 	print ("\n%s [%s01%s] \x1b[1;96mGanti user agent "%(P,K,P))
@@ -662,19 +734,21 @@ def menu():
     elif unik in['3','03']:
         postingan(romz)
     elif unik in['4','04']:
-    	igg()
+        dumpfl()
     elif unik in['5','05']:
-        ngentod().romiy()
+    	igg()
     elif unik in['6','06']:
-    	useragent()
+        ngentod().romiy()
     elif unik in['7','07']:
+    	useragent()
+    elif unik in['8','08']:
     	print "\n%s [01] Hasil crack akun facebook "%(P)
         print "%s [02] Hasil crack akun instagram "%(P)
         c = raw_input('\n%s [?] Menu : %s'%(P,K))
     	hasill(c)
-    elif unik in['8','08']:
-        os.system("xdg-open https://www.facebook.com/groups/924679595149360")
     elif unik in['9','09']:
+        os.system("xdg-open https://www.facebook.com/groups/924679595149360")
+    elif unik in['10','100']:
         print(ingfo)
     elif unik in['0','00']:
         print ('')
