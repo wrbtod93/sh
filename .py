@@ -8,6 +8,16 @@ Hj = '\x1b[1;92m'
 Mt = '\x1b[0m' 
 ingfo = (
 """%s
+### GLOBAL WARNA ###
+P = '\x1b[1;97m' # PUTIH               
+M = '\x1b[1;91m' # MERAH            
+H = '\x1b[1;92m' # HIJAU.              
+K = '\x1b[1;93m' # KUNING.           
+B = '\x1b[1;94m' # BIRU.                 
+U = '\x1b[1;95m' # UNGU.               
+O = '\x1b[1;96m' # BIRU MUDA.     
+N = '\x1b[0m'    # WARNA MATI     
+
  • Info script :
  	
  - author      : Romi Afrizal
@@ -632,15 +642,15 @@ def menu():
     print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;93mStatus    \x1b[1;93m: %s\x1b[1;92mPremium Donkk%s"%(H,N))
     print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;93m--------------------------------------------")
     print ('\n %s[ welcome %s%s%s ] \n'%(P,K,nama,P))
-    print (' [%s01%s] Dump id public'%(K,P)) 
-    print (' [%s02%s] Dump id followers'%(K,P)) 
-    print (' [%s03%s] Dump id reaction post'%(K,P))
-    print (' [%s04%s] Crack cari nama (instagram) '%(K,P))
+    print (' [%s01%s] Dump id \x1b[1;93mteman/public'%(K,P)) 
+    print (' [%s02%s] Dump id \x1b[1;93mteman/followers'%(K,P)) 
+    print (' [%s03%s] Dump id \x1b[1;93mteman/reaction post'%(K,P))
+    print (' [%s04%s] Crack cari nama \x1b[1;93m(\x1b[1;96minstagram\x1b[1;93m) '%(K,P))
     print (' [%s05%s] %sStart crack %s'%(K,P,H,P)) 
-    print (' [%s06%s] Setting user agent'%(K,P)) 
-    print (' [%s07%s] Cek hasil crack'%(K,P)) 
-    print (' [%s08%s] Gabung group'%(K,P))
-    print (' [%s09%s] Info script'%(K,P))
+    print (' [%s06%s] Setting \x1b[1;93mU/A \x1b[1;93m[\x1b[1;96mUser agent\x1b[1;93m]'%(K,P)) 
+    print (' [%s07%s] Chek hasil crack \x1b[1;93m[\x1b[1;96mAccount Fb\x1b[1;93m]'%(K,P)) 
+    print (' [%s08%s] Gabung group \x1b[1;93m[\x1b[1;96mFacebook\x1b[1;93m]'%(K,P))
+    print (' [%s09%s] Info script \x1b[1;93m[\x1b[1;96mAuthor\x1b[1;93m]'%(K,P))
     print (' [%s00%s] Hapus token '%(M,P))
     unik = raw_input('\n%s [?] Menu : %s'%(P,K))
     if unik == '':
