@@ -84,15 +84,15 @@ def logo():
 header = {"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)), "x-fb-sim-hni": str(random.randint(20000, 40000)), "x-fb-net-hni": str(random.randint(20000, 40000)), "x-fb-connection-quality": "EXCELLENT", "x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA", "user-agent": "NokiaC3-00/5.0 (07.20) Profile/MIDP-2.1 Configuration/CLDC-1.1 Mozilla/5.0 AppleWebKit/420+ (KHTML, like Gecko) Safari/420+ ;]", "content-type": "application/x-www-form-urlencoded", "x-fb-http-engine": "Liger"}
 def masuk():
     os.system('clear');logo()
-    print ('\n%s [01] Login via token \n [02] Cara mendapatkan token \n [%s00%s] Keluar'%(P,M,P))
-    rom = raw_input('\n%s [?] Menu : %s'%(P,K))
+    print ('\n%s \x1b[1;93m[\x1b[1;96m01\x1b[1;93m] \x1b[1;93mLogin \x1b[1;96mvia token \n \x1b[1;93m[\x1b[1;96m02\x1b[1;93m] \x1b[1;93mCara mendapatkan \x1b[1;93m[\x1b[1;96mtoken\x1b[1;93m] \n [%s00%s] Keluar'%(P,M,P))
+    rom = raw_input('\n%s [?] \x1b[1;93mMenu : %s'%(P,K))
     if rom in(""):
-    	print("%s [!] Isi yang benar kentod "%(M));exit()
+    	print("%s [!] \x1b[1;91mIsi yang benar kentod "%(M));exit()
     elif rom in ('1','01'):
-        jalan("\n%s [%s!%s] Wajib gunakan akun tumbal dilarang akun utama"%(P,M,P))
-    	romz = raw_input('%s [?] Token : %s'%(P,K))
+        jalan("\n%s [%s!%s] \x1b[1;96mWajib gunakan akun tumbal dilarang akun utama"%(P,M,P))
+    	romz = raw_input('%s [?] \x1b[1;93mToken : %s'%(P,K))
         if romz in(""):
-        	print("%s [!] Isi yang benar kentod "%(M));exit()
+        	print("%s [!] \x1b[1;91mIsi yang benar kentod "%(M));exit()
     	try:
             gas = requests.get('https://graph.facebook.com/me?access_token=%s'%(romz)).json()['name']
             print ('\n%s[√] Login berhasil, mohon tunggu '%(H));jeda(2)
@@ -185,7 +185,7 @@ def publik(romz,headers=header):
     except:pass
     try:
     	print ("\n%s [%s!%s] \x1b[1;93mKetik '%sme%s' \x1b[1;93mjika ingin dump daftar teman sendiri "%(P,M,P,H,P))
-        idt = raw_input(' [*] \x1b[1;93mTarget id : %s'%(K))
+        idt = raw_input('%s [*] \x1b[1;93mTarget id : %s'%(K))
         gas = requests.get('https://graph.facebook.com/%s?access_token=%s'%(idt,romz))
         nm = json.loads(gas.text)
         file = ('dump/'+nm['first_name']+'.json').replace(' ', '_')
