@@ -75,7 +75,7 @@ def logo():
 	print("""%s
  \x1b[1;92m _________      \x1b[1;93m_____    _______   \x1b[1;92m__________
  \x1b[1;92m/   _____/     \x1b[1;93m/  _  \   \      \  \x1b[1;92m\____    /
- \x1b[1;92m\_____  \   \x1b[1;93m    /_\  \  /   |   \   \x1b[1;92m/     /
+ \x1b[1;92m\_____  \   \x1b[1;93m  /  /_\  \  /   |   \   \x1b[1;92m/     /
  \x1b[1;92m/        \ \x1b[1;93m  /    |    \/    |    \ \x1b[1;92m/     /_ 
  \x1b[1;92m/______  /   \x1b[1;93m\____|__  /\____|__  /\x1b[1;92m/_______ \  
  \x1b[1;92m       \/     \x1b[1;93m       \/         \/         \x1b[1;92m\/    """%(N))
@@ -84,7 +84,7 @@ def logo():
 header = {"x-fb-connection-bandwidth": str(random.randint(20000000.0, 30000000.0)), "x-fb-sim-hni": str(random.randint(20000, 40000)), "x-fb-net-hni": str(random.randint(20000, 40000)), "x-fb-connection-quality": "EXCELLENT", "x-fb-connection-type": "cell.CTRadioAccessTechnologyHSDPA", "user-agent": "NokiaC3-00/5.0 (07.20) Profile/MIDP-2.1 Configuration/CLDC-1.1 Mozilla/5.0 AppleWebKit/420+ (KHTML, like Gecko) Safari/420+ ;]", "content-type": "application/x-www-form-urlencoded", "x-fb-http-engine": "Liger"}
 def masuk():
     os.system('clear');logo()
-    print ('\n%s \x1b[1;93m[\x1b[1;96m01\x1b[1;93m] \x1b[1;93mLogin \x1b[1;96mvia token \n \x1b[1;93m[\x1b[1;96m02\x1b[1;93m] \x1b[1;93mCara mendapatkan \x1b[1;93m[\x1b[1;96mtoken\x1b[1;93m] \n [%s00%s] Keluar'%(P,M,P))
+    print ('\n%s \x1b[1;93m[\x1b[1;96m01\x1b[1;93m] \x1b[1;93mLogin \x1b[1;96mvia token \n \x1b[1;93m[\x1b[1;96m02\x1b[1;93m] \x1b[1;93mCara mendapatkan \x1b[1;93m[\x1b[1;96mtoken\x1b[1;93m] \n [%s00%s\x1b[1;93m] \x1b[1;91mKeluar'%(P,M,P))
     rom = raw_input('\n%s [?] \x1b[1;93mMenu : %s'%(P,K))
     if rom in(""):
     	print("%s [!] \x1b[1;91mIsi yang benar kentod "%(M));exit()
