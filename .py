@@ -777,7 +777,7 @@ def info_tools():
     os.system('clear')
     logo()
     print ' %s\x1b[1;93m[%s\x1b[1;93m#%s\x1b[1;93m]'%(N,O,N), 52 * '\x1b[1;97m-\x1b[0m';time.sleep(0.07)
-    print ' %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] Welcome to Tools       \x1b[1;93m'%(N,H,N);time.sleep(0.07)
+    print ' %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] \x1b[1;92mWelcome to Tools       \x1b[1;93m'%(N,H,N);time.sleep(0.07)
     print ' %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] TEAM      \x1b[1;93m: XNX-CODE TEAM 2021.'%(N,H,N);time.sleep(0.07)
     print ' %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] Author    \x1b[1;93m: Sanz-Tzy \x1b[1;93mX Haris Ganz.'%(N,H,N);time.sleep(0.07)
     print ' %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] Github    \x1b[1;93m: https://github.com/Sanz-Tzy'%(N,H,N);time.sleep(0.07)
@@ -787,7 +787,7 @@ def info_tools():
     print ' %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] Peringatan \x1b[1;93m: Jangan lupa Follow dan Like github saya!'%(N,H,N);time.sleep(0.07)
     print ' %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] Catatan  \x1b[1;93m: Kunjungi Facebook Saya Bintang Tzy'%(N,H,N);time.sleep(0.07)
     print ' %s\x1b[1;93m[%s\x1b[1;93m#%s\x1b[1;93m]'%(N,O,N), 52 * '\x1b[1;97m-\x1b[0m';time.sleep(0.07)
-    print ' %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] Tutorial buka akun sesi  \x1b[1;93m: '%(N,H,N);time.sleep(0.07)
+    print ' %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] \x1b[1;92mTutorial buka akun sesi  \x1b[1;93m: '%(N,H,N);time.sleep(0.07)
     print ' %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] \x1b[1;93m: Buka akun terkena sesi'%(N,H,N);time.sleep(0.07)
     print ' %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] \x1b[1;93m: lalu liat jenis sesi tersebut jika sesi tersebut ia lah komputer lain'%(N,H,N);time.sleep(0.07)
     print ' %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] \x1b[1;93m: terus ketik lanjut 5-7 kli menggunakan SIM satu'%(N,H,N);time.sleep(0.07)
@@ -795,7 +795,7 @@ def info_tools():
     print ' %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] \x1b[1;93m: lalu mainkan mode pesawat 5-10 detik lalu masuk ke akun kesesi tersebut'%(N,H,N);time.sleep(0.07)
     print ' %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] \x1b[1;93m: lihat lah perubahan tersebut'%(N,H,N);time.sleep(0.07)
     print ' %s\x1b[1;93m[%s\x1b[1;93m#%s\x1b[1;93m]'%(N,O,N), 52 * '\x1b[1;97m-\x1b[0m';time.sleep(0.07)
-    print ' %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] \x1b[1;93m: \x1b[1;93mTerimakasih kepada'%(N,H,N);time.sleep(0.07)
+    print ' %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] \x1b[1;93m: \x1b[1;92mTerimakasih kepada'%(N,H,N);time.sleep(0.07)
     print '\n %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] \x1b[1;92m: Author Script'%(N,H,N);time.sleep(0.07)
     print ' %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] \x1b[1;93m: Sanz-Tzy'%(N,H,N);time.sleep(0.07)
     print ' %s\x1b[1;93m[%s\x1b[1;96m>%s\x1b[1;93m] \x1b[1;93m: Haris Ganz'%(N,H,N);time.sleep(0.07)
@@ -956,14 +956,14 @@ def menu():
     except requests.exceptions.ConnectionError:
         exit("%s [!] Kesalahan koneksi "%(M))
     logo()
-    print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;93m--------------------------------------------")
-    print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;93mAuthor    : \x1b[1;92mSanz Tzy \x1b[1;93mX \x1b[1;92mHARIS GANZ'
-    print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;93mVersion   : \x1b[1;92m5.5'
-    print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;93mFacebook  : \x1b[1;92mBintang Tzy'
-    print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;93m--------------------------------------------")
-    print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;93mTeam \x1b[1;93m     : XNX CODE TEAM 2021'
-    print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;93mStatus    \x1b[1;93m: %s\x1b[1;92mPremium Donkk%s"%(H,N))
-    print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;93m--------------------------------------------")
+    print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97m--------------------------------------------")
+    print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mAuthor    : \x1b[1;92mSanz Tzy \x1b[1;93mX \x1b[1;92mHARIS GANZ'
+    print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mVersion   : \x1b[1;92m5.5'
+    print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mFacebook  : \x1b[1;92mBintang Tzy'
+    print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97m--------------------------------------------")
+    print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mTeam \x1b[1;93m     : \x1b[1;92mXNX CODE TEAM 2021'
+    print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mStatus    \x1b[1;93m: %s\x1b[1;92mPremium Donkk%s"%(H,N))
+    print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97m--------------------------------------------")
     print ('\n %s[ welcome %s%s%s ] \n'%(P,K,nama,P))
     print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m01%s\x1b[1;93m] \x1b[1;97mDump id \x1b[1;93mteman/public'%(K,P)) 
     print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m02%s\x1b[1;93m] \x1b[1;97mDump id \x1b[1;93mteman/followers'%(K,P)) 
