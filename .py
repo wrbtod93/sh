@@ -185,7 +185,7 @@ def publik(romz,headers=header):
     except:pass
     try:
     	print ("\n%s [%s!%s] \x1b[1;93mKetik '%sme%s' \x1b[1;93mjika ingin dump daftar teman sendiri "%(P,M,P,H,P))
-        idt = raw_input('%s [*] \x1b[1;93mTarget id : %s'%(K))
+        idt = raw_input(' [*] \x1b[1;93mTarget id : %s'%(K))
         gas = requests.get('https://graph.facebook.com/%s?access_token=%s'%(idt,romz))
         nm = json.loads(gas.text)
         file = ('dump/'+nm['first_name']+'.json').replace(' ', '_')
