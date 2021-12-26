@@ -958,10 +958,10 @@ def menu():
     logo()
     print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97m--------------------------------------------")
     print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mAuthor    : \x1b[1;92mSanz Tzy \x1b[1;93mX \x1b[1;92mHARIS GANZ \x1b[1;93mX \x1b[1;92mYumasaaTzy'
-    print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mVersion   : \x1b[1;92m5.5'
+    print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mVersion   : \x1b[1;92m2.5'
     print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mFacebook  : \x1b[1;92mBintang Tzy'
     print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97m--------------------------------------------")
-    print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mTeam \x1b[1;93m     : \x1b[1;92mCODE-TEAM'
+    print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mTeam \x1b[1;93m     : \x1b[1;92mCODE-TEAM 2021'
     print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mStatus    \x1b[1;93m: %s\x1b[1;92mPremium Donkk%s"%(H,N))
     print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97m--------------------------------------------")
     print ('\n %s[ welcome %s%s%s ] \n'%(P,K,nama,P))
