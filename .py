@@ -977,6 +977,7 @@ def menu():
     print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m10%s\x1b[1;93m] \x1b[1;97mChek Opsi \x1b[1;93m[\x1b[1;96mHasil Crack\x1b[1;93m]'%(K,P)) 
     print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m11%s\x1b[1;93m] \x1b[1;97mGabung group \x1b[1;93m[\x1b[1;96mFacebook\x1b[1;93m]'%(K,P))
     print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m12%s\x1b[1;93m] \x1b[1;97mInfo script \x1b[1;93m[\x1b[1;96mAuthor\x1b[1;93m]'%(K,P))
+    print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m13%s\x1b[1;93m] \x1b[1;97mMenu Crack \x1b[1;93m[\x1b[1;96mIgeh><\x1b[1;93m]'%(K,P))
     print (' \x1b[1;93m[%s\x1b[1;97m\x1b[1;96m00%s\x1b[1;93m] \x1b[1;91mHapus token '%(M,P))
     unik = raw_input('\n%s [?] Menu : %s'%(P,K))
     if unik == '':
@@ -1008,12 +1009,19 @@ def menu():
         os.system("xdg-open https://www.facebook.com/groups/924679595149360")
     elif unik in['12','120']:
         info_tools()
+    elif unik in['13','130']:
+    	menu_ig()
     elif unik in['0','00']:
         print ('')
         tik();jeda(1);os.system('rm -rf token.txt')
         jalan('\n%s [√] berhasil terhapus '%(H));exit()
     else:
         print("%s [!] Isi yang benar kentod "%(M));jeda(2);menu()
+# Yumasaa Ganss
+def menu_ig():
+	os.system("python2 yakuzaXsuzuran.py")
+# pastikan taruh file ya yang sama directoryokh
+
 def hasill(c):
 	if c in[""]:
 		print ("%s[%s!%s] isi yang benar kentod"%(P,M,P));exit()
