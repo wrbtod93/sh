@@ -320,16 +320,16 @@ class ngentod:
                         else:
                             print ('\n %s[!] isi yang benar kentod'%(M));zona()
                     print '\n%s \x1b[1;97m[ \x1b[1;96mpilih methode crack - silahkan coba satu² \x1b[1;97m]\n'%(P)
-                    print ' [%s01%s] \x1b[1;93mmethode b-api (crack cepat)'%(K,P)
-                    print ' [%s02%s] \x1b[1;92mmethode mbasic (crack lambat)'%(K,P)
+                    print ' \x1b[1;93m[%s\x1b[1;96m01%s\x1b[1;93m] \x1b[1;93mmethode b-api (crack cepat)'%(K,P)
+                    print ' \x1b[1;93m[%s\x1b[1;96m02%s\x1b[1;93m] \x1b[1;92mmethode mbasic (crack lambat)'%(K,P)
                     print ' [%s03%s] \x1b[1;97mmethode mobile (crack sangat lambat) '%(K,P)
                     zona(pwx.split(','))
                     break
         elif unikers in ('T', 't'):
             print '\n%s \x1b[1;97m[ \x1b[1;96mpilih methode crack - silahkan coba satu² \x1b[1;97m]\n'%(P)
-            print ' [%s01%s] \x1b[1;93mmethode b-api (crack cepat)'%(K,P)
-            print ' [%s02%s] \x1b[1;92mmethode mbasic (crack lambat)'%(K,P)
-            print ' [%s03%s] \x1b[1;97mmethode mobile (crack sangat lambat) '%(K,P)
+            print ' \x1b[1;93m[%s\x1b[1;96m01%s\x1b[1;93m] \x1b[1;93mmethode b-api (crack cepat)'%(K,P)
+            print ' \x1b[1;93m[%s\x1b[1;96m02%s\x1b[1;93m] \x1b[1;92mmethode mbasic (crack lambat)'%(K,P)
+            print ' \x1b[1;93m[%s\x1b[1;96m03%s\x1b[1;93m] \x1b[1;97mmethode mobile (crack sangat lambat) '%(K,P)
             self.langsung()
         else:
             print("%s [!] Isi yang benar kentod "%(M));jeda(2);menu()
@@ -957,7 +957,7 @@ def menu():
         exit("%s [!] Kesalahan koneksi "%(M))
     logo()
     print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97m--------------------------------------------")
-    print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mAuthor    : \x1b[1;92mSanz Tzy \x1b[1;93mX \x1b[1;92mHARIS GANZ'
+    print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mAuthor    : \x1b[1;92mSanz Tzy \x1b[1;93mX \x1b[1;92mHARIS GANZ \x1b[1;93mX \x1b[1;92mYumasaaTzy'
     print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mVersion   : \x1b[1;92m5.5'
     print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mFacebook  : \x1b[1;92mBintang Tzy'
     print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97m--------------------------------------------")
