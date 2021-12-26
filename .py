@@ -961,7 +961,7 @@ def menu():
     print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mVersion   : \x1b[1;92m5.5'
     print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mFacebook  : \x1b[1;92mBintang Tzy'
     print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97m--------------------------------------------")
-    print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mTeam \x1b[1;93m     : \x1b[1;92mXNX CODE TEAM 2021'
+    print ' \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mTeam \x1b[1;93m     : \x1b[1;92m[%s*%s] IP : %s%s'''%'
     print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97mStatus    \x1b[1;93m: %s\x1b[1;92mPremium Donkk%s"%(H,N))
     print(" \x1b[1;92m[\x1b[1;93m•\x1b[1;92m] \x1b[1;97m--------------------------------------------")
     print ('\n %s[ welcome %s%s%s ] \n'%(P,K,nama,P))
